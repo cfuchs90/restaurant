@@ -1,0 +1,31 @@
+body {
+  background: black;
+}
+nav {
+  margin: 2em auto;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: auto;
+}
+
+nav ul li {
+  display: inline;
+  padding: 25px;
+  background: linear-gradient(to bottom right, red, rgba(255,0,0,0));
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+nav ul li:hover {
+  background: black;
+  color: white;
+}
+
+
+#content {
+  background: rgba(255, 0, 0, 40%);
+}
