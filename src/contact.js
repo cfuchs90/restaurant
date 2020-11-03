@@ -5,18 +5,56 @@ function createContact() {
   let textField = document.createElement('textarea');
   let emailLabel = document.createElement('label');
   let textLabel = document.createElement('label');
+  let nameField = document.createElement('input');
+  let nameLabel = document.createElement('label');
 
+  let list = document.createElement("ul");
+  let nameElement = document.createElement("li");
+  let emailElement = document.createElement("li");
+  let textElement = document.createElement("li");
 
-  emailLabel.htmlFor = "emailField"
-  textLabel.htmlFor = "textField";
+  list.style.listStyle = "none";
+
   emailField.setAttribute("id", "emailField");
-  textField.setAttribute("id", "textField");
   emailField.type = "email";
 
-  formField.appendChild(emailLabel);
-  formField.appendChild(emailField);
-  formField.appendChild(textLabel);
-  formField.appendChild(textField);
+  textField.setAttribute("id", "textField");
+  textField.rows = "10";
+  textField.cols = "50";
+  textField.style.resize = "none";
+  textField.style.verticalAlign = "top";
+
+  nameField.setAttribute("id", "nameField");
+  nameField.type = "input";
+
+  nameLabel.htmlFor = "nameField"
+  nameLabel.textContent = "Name:"
+  nameLabel.style.color = "#ffffff"
+
+  emailLabel.htmlFor = "emailField"
+  emailLabel.textContent = "Email:"
+  emailLabel.style.color = "#ffffff"
+
+  textLabel.htmlFor = "textField";
+  textLabel.textContent = "Message";
+  textLabel.style.color = "#ffffff"
+
+  nameElement.appendChild(nameLabel);
+  nameElement.appendChild(nameField);
+  emailElement.appendChild(emailLabel);
+  emailElement.appendChild(emailField);
+  textElement.appendChild(textLabel);
+  textElement.appendChild(textField);
+
+  nameField.style.marginLeft = "2em";
+  emailField.style.marginLeft = "2em";
+  textField.style.marginLeft = "1.2em";
+
+  list.appendChild(nameElement);
+  list.appendChild(emailElement);
+  list.appendChild(textElement);
+
+  formField.appendChild(list);
 
   formBox.appendChild(formField);
 
