@@ -1,8 +1,6 @@
 import {createHome} from './home'
 import {createContact} from './contact'
-
-
-
+import {createMenu} from './menu'
 
 function createNav(linkNames){
   let linkList = document.createElement("ul");
@@ -31,6 +29,7 @@ function buildContent(page) {
   img.src = "/home/christian/projects/restaurant/src/tittytwister.jpeg";
 
   navBar.appendChild(linkList);
+  navBar.style.margin= "2em";
 
   content.style.width = "80%";
   content.style.margin = "0 auto";
@@ -38,24 +37,32 @@ function buildContent(page) {
   content.appendChild(img);
   content.appendChild(navBar);
   content.appendChild(page);
+
+  let homeLink = document.querySelector('#Home');
+  let menuLink = document.querySelector('#Menu');
+  let contactLink = document.querySelector('#Contact');
+
+
+  homeLink.addEventListener("click", (e) => {
+    let home = createHome();
+    buildContent(home);
+  });
+
+
+  menuLink.addEventListener("click", (e) => {
+    let menu = createMenu();
+    buildContent(menu);
+  });
+
+
+  contactLink.addEventListener("click", (e) => {
+    let contact = createContact();
+    buildContent(contact);
+  });
+
 }
 
 
 let home = createHome();
 buildContent(home);
 
-let homeLink = document.querySelector('#Home');
-let menuLink = document.querySelector('#Menu');
-let contactLink = document.querySelector('#Contact');
-
-
-homeLink.addEventListener("click", (e) => {
-  let home = createHome();
-  buildContent(home);
-});
-
-
-contactLink.addEventListener("click", (e) => {
-  let contact = createContact();
-  buildContent(contact);
-});
